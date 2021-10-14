@@ -19,7 +19,7 @@ Get-Content ".\number.txt" | %{
 
     while ($apa -ne $fin)
     {
-        $lineBody = "immatriculation=FX-692-FE&apa=$apa"
+        $lineBody = "immatriculation=$immatriculation&apa=$apa"
         $responseFromServer = Invoke-WebRequest -Uri "https://paiementenligne.versailles.fr/fps/" -Body $lineBody -Method Post
 
         if ($responseFromServer -notmatch '<strong>Erreur')
